@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>Tabletop Hero Project External Resources</title>
+  <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <!--[if lte IE 8]><script src='assets/js/ie/html5shiv.js'></script><![endif]-->
+  <link rel='stylesheet' type='text/css' href='assets/css/tabletophero.css' />
+  <!--[if lte IE 8]><link rel='stylesheet' href='assets/css/ie8.css' /><![endif]-->
+</head>
+
+<body>
+  <div id='xresources'>
+    <!-- Title banner -->
+    <h1>Tabletop Hero Project</h1>
+
+    <!-- Header navigation -->
+    <div class='xresources-headcard'>
+      <a class="wiki_link" href="index.html">&lt;Home</a>
+      <p>Please describe any links you add.</p>
+    </div> <!-- xresources-headcard -->
+    <hr>
+
+    <!-- External Resources sections and entries -->
+    <div>
+      <ul>
+        <li class='xresources-source' v-for='section in sections'>
+          <h3 class='xresources-sourcetitle'>{{section.name}}</h3>
+          <p>{{section.description}}</p>
+
+          <ul><li v-for='entry in section.entries'>
+            <div v-bind:id='entry.sourceid' class='xresources-entry'>
+				<h6><a class="wiki_link" v-bind:href="entry.link">{{entry.name}}</a></h6>
+              <div class='xresources-sourcedesc' v-html='entry.description'></div>
+
+              <ul class='xresources-subentries'>
+                <li class='xresources-subentry' v-for='subentry in entry.subentries'>
+                  <a class="wiki_link" v-bind:href="subentry.link">{{subentry.linktext}}</a>
+                  <div v-html='subentry.description'></div>
+                </li> <!-- xresources-subentry -->
+              </ul> <!-- xresources-subentries -->
+
+            </div> <!-- xresources-entry -->
+          </li></ul>
+
+        </li><!-- xresources-source -->
+      </ul><!-- -->
+    </div><!-- -->
+    <hr>
+
+    <!-- Footer navigation -->
+    <div class='xresources-footcard'>
+      <a class="wiki_link" href="index.html">&lt;Home</a>
+      <p>Please describe any links you add.</p>
+    </div> <!-- xresources-footcard -->
+
+  </div> <!-- xresources -->
+
+  <!-- Script links -->
+  <script src='assets/js/vue.js'></script>
+  <script src='assets/js/data-xresources.js'></script>
+
+</body>
+</html>
+
+<!--
+
+-->
