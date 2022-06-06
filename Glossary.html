@@ -68,11 +68,10 @@
 
     <ul class='glossary-list'>
       <li class='glossary-entry' v-for='entry in entries'>
-        <div v-bind:id='entry.id' class='glossary-term'>
+        <p v-bind:id='entry.id' class='glossary-term'>
           {{entry.name}}
-        </div>
-        <div class='glossary-defn' v-html="entry.description">
-        </div>
+          <div class='glossary-defn' v-html="entry.description">
+        </p>
       </li> <!-- glossary-entry -->
     </ul><!-- glossary-list -->
 
